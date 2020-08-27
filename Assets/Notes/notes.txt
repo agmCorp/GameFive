@@ -1,0 +1,31 @@
+Problema:
+CommandInvokationFailure: Unable to install APK to device. Please make sure the Android SDK is installed and is properly configured in the Editor. See the Console for more details.
+C:/Alvaro/Develop/Android/AndroidSDK\platform-tools\adb.exe -s "04fcd1fb7d27" install -r "C:\Alvaro\Develop\Android\20190417\UnityProjects\builds\five.apk"
+
+stderr[
+adb: failed to install C:\Alvaro\Develop\Android\20190417\UnityProjects\builds\five.apk: Failure [INSTALL_FAILED_VERSION_DOWNGRADE]
+]
+stdout[
+
+]
+exit code: 1
+
+Solución:
+Hay que borrar la instalación previa en el dispositivo:
+C:/Alvaro/Develop/Android/AndroidSDK\platform-tools\adb.exe shell pm uninstall uy.com.agm.gamefour
+
+-------------------------------------------------------------------------------------------------
+
+dudas:
+- Como trabajar en equipo o con git/github
+- Manejo de memoria? debo evitar el gc en Unity? o el tiene pools?
+- Pasaje de parametros en c# es por referencia como java?
+- Necesito saber los sistemas de coordenadas:
+camara en el centro
+sprite en su centro al parecer, donde muestra la imagen en el editor
+touches en la pantalla (mouse): el vertice 0,0 esta abajo a la izquierda.
+- simular touches en la pantalla de game de unity para probar en desktop.
+- como debuguear, admonitor para android?
+- orden de ejecucion de los scripts: si en uno aumento el score, el otro puedo preguntar si el score aumento? como se cual se ejecuta antes y cual despues?
+
+
